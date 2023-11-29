@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails matiere</title>
+</head>
+<body>
+    <h1>Matière : {{matiere.id}}</h1>
+    <p>Désignation : {{matiere.nom}}</p>
+    <p>Enseigant responsable : {{matiere.enseignant}}</p>
+    <div>
+        Niveaux d'ens : 
+        {% for niv in matiere.niveaux.all %}
+        <span>{{ niv}}</span>
+        {%endfor%}
+    </div>
+</body>
+</html>

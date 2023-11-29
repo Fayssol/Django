@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails eleve</title>
+    <style>
+        /* *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        .container{
+            text-align: center;
+            padding: 50px;
+            width: 500px;
+            margin: auto;
+            background-color: orange;
+            margin-top: 20px;
+            border: 2px solid yellowgreen;
+            border-radius: 10px;
+            box-shadow: 3px 6px 8px whitesmoke;
+        } */
+       
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Eleve : {{eleve.eleve_id}}</h1>
+        <p><strong>Nom: </strong> {{eleve.nom}}</p>
+        <p><strong>Prenom: </strong> {{eleve.prenom}}</p>
+        <p><strong>Niveau: </strong> {{eleve.niveau}}</p>
+        <p><strong>Matières suivies</strong></p>
+        <ul>
+            {%for mat in matieres%}
+            <li><a href="{% url 'notes:add_note' mat.id eleve.id %}">{{ mat.nom }}</a></li>
+
+            {%endfor%}
+        </ul>
+    </div>
+   
+</body>
+
+
+</html>

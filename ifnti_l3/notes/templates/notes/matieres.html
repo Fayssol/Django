@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste matieres</title>
+    <style>
+      
+        h2{
+            margin: 20px;
+        }
+        body{
+            text-align: center;
+        }
+        a{
+            color: gray;
+        }
+        a:hover{
+            color: orange;
+        }
+    </style>
+</head>
+<body>
+    <h2>Nos Matieres</h2>
+    <div>
+        <!-- {%for mat in matieres%}
+        <a href="/notes/matiere/{{mat.id}}"><li>{{mat.nom}} a pour enseignant {{mat.enseignant}}</li></a>
+        {%endfor%} -->
+        {% for mat in matieres %}
+        <p>
+             <a href="{% url 'notes:matieres' %}/{{ mat.id }}"><li>{{ mat.nom }}</li></a>
+             <hr>
+        </p>
+           
+        {% endfor %}
+
+    </div>
+</body>
+</html>

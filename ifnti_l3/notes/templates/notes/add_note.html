@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Note</title>
+    <style>
+        form{
+            padding: 50px;
+        }
+        div{
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="" method="post">
+            {% csrf_token %}
+            <div class="enf">
+                <!-- <label for="note">Note</label>
+                <input type="number" name="note"> -->
+                {{ form.valeur.label_tag }}
+                {{form.valeur}}
+                {%if form.valeur.errors%}
+                <ul>
+                    {%for error in form.valeur.errors%}
+                        <li>{{ error }}</li>
+                    {%endfor%}
+                </ul>
+
+                {%endif%}
+            </div>
+            <button type="submit">Add</button>
+        </form>
+       
+    </div>
+</body>
+</html>

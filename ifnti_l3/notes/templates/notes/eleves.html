@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liste eleves</title>
+    <style>
+        body{
+         
+          text-align: center;
+        }
+        a{
+           
+            color: grey;
+        }
+        a:hover{
+            color: orange;
+        }
+        h2{
+            margin: 50px;
+            border: 3px solid green;
+            border-radius: 5px;
+            width: 35%;
+          margin-left: 34%;
+        }
+        .container{
+           margin: auto;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Nos Éleves</h2>
+        <!-- <ul> -->
+    
+            {% for elev in eleves %}
+            <p>
+                <a href="{% url 'notes:eleves' %}/{{ elev.id }}"><li>{{ elev.nom }} {{elev.prenom}}</li></a>
+            <hr/>
+           
+            {% endfor %}
+        </p>
+    </div>
+    
+</body>
+</html>
